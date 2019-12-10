@@ -1,0 +1,25 @@
+def solution(N):
+    
+    countOnes = 0
+    countZeroes = 0
+    tracker = 0
+    
+    binaryValue = "{0:b}".format(N)
+    
+    for i in binaryValue:
+        i = int(i)
+        
+        if i == 0 and countOnes > 0:
+            countZeroes += 1
+        
+        if i == 1:
+            countOnes += 1
+        
+        if countOnes == 2:
+            countOnes -= 1
+            if countZeroes > tracker:
+                tracker = countZeroes
+            countZeroes = 0
+
+
+    return tracker
