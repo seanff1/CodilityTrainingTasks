@@ -1,25 +1,24 @@
 def solution(N):
     
-    countOnes = 0
-    countZeroes = 0
-    tracker = 0
+    binaryValue = format(N,'b')
     
-    binaryValue = "{0:b}".format(N)
+    zeroCount = 0
+    oneCount = 0
+    binaryGap = 0
+    
     
     for i in binaryValue:
-        i = int(i)
         
-        if i == 0 and countOnes > 0:
-            countZeroes += 1
+        if i == '0' and oneCount > 0:
+            zeroCount += 1
         
-        if i == 1:
-            countOnes += 1
+        if i == '1':
+            oneCount += 1
         
-        if countOnes == 2:
-            countOnes -= 1
-            if countZeroes > tracker:
-                tracker = countZeroes
-            countZeroes = 0
-
-
-    return tracker
+        if oneCount == 2:
+            oneCount -= 1
+            if binaryGap < zeroCount:
+                binaryGap = zeroCount
+            zeroCount = 0
+            
+    return binaryGap
