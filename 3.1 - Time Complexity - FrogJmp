@@ -1,0 +1,13 @@
+import math
+def solution(X, Y, D):
+    
+    jumpsNeeded = 0
+    
+    if X > Y:
+        X = X - Y
+        jumpsNeeded = math.ceil(X/D)
+    else:
+        Y = Y - X
+        jumpsNeeded = math.ceil(Y/D)
+    
+    return jumpsNeeded
