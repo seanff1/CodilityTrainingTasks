@@ -1,0 +1,8 @@
+def solution(A):
+    arrayLen = len(A)
+    results = A[0] 
+      
+    
+    for i in range(1,arrayLen): 
+        results = results ^ A[i]
+    return results
