@@ -1,0 +1,14 @@
+def solution(A, K):
+    
+    arrayLength = len(A)
+    newArray = []
+    
+    if arrayLength > 1:
+     for i in range(K):
+            newArray.append(A[arrayLength - 1])
+            for i in range(arrayLength - 1):
+                newArray.append(A[i])
+            A = newArray
+            newArray = []
+    
+    return A
